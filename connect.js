@@ -34,6 +34,8 @@ exports.displayTodos=(callback)=>
 
 exports.insertTodo=(data,callback)=>
 	{
+		data.done=false;
+		data.date=new Date();
         const info_prom=col.insertOne(data);
         info_prom.then((result,err)=>
 	        {
