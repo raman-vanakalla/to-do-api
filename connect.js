@@ -45,7 +45,7 @@ exports.insertTodo=(data,callback)=>
 
 exports.updateTodo=(id,data,callback)=>
 	{
-		const info_prom=col.findOneAndUpdate({_id:new mongo.ObjectId(id)},{$set:data});
+		const info_prom=col.findOneAndUpdate({_id:new mongo.ObjectId(id)},data);
 		info_prom.then((result,err)=>
 		   {
                callback(err||result);
